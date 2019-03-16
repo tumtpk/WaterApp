@@ -1,0 +1,31 @@
+<ion-menu [content]="content">
+    <ion-header>
+        <ion-toolbar class="user-profile">
+
+            <ion-grid>
+                <ion-row>
+                    <ion-col padding-top col-12>
+                        <h2 ion-text class="no-margin bold text-white">
+                            <ion-icon name="contact"></ion-icon> {{global.name}}
+                        </h2>
+                    </ion-col>
+                </ion-row>
+        
+                <ion-row no-padding class="other-data">
+                    <!-- <ion-col no-padding class="column">
+                        <button ion-button icon-left small full color="light" menuClose disabled>
+                        <ion-icon name="contact"></ion-icon>
+                        แก้ไขข้อมูลส่วนตัว
+                        </button>
+                    </ion-col> -->
+                </ion-row>
+        
+            </ion-grid>
+        
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <header-menu></header-menu>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>

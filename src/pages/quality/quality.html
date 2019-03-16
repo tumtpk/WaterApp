@@ -1,0 +1,67 @@
+<!--
+  Generated template for the QualityPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ผลการแจ้งปัญหา</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-searchbar showCancelButton placeholder="ค้นหา" [(ngModel)]="searchStr" (input)="getItems()" (ionClear)="resetData()"></ion-searchbar>
+    <!-- <ion-list>
+        <ion-grid>
+          <ion-row *ngFor="let item of items" (click)="itemSelected(item)" class="border">
+            <ion-col col-8>
+                  {{ item.positionName }}
+            </ion-col>
+            <ion-col col-4>
+                <ion-icon  name="checkmark-circle" color="secondary"></ion-icon>
+                <div class="text" *ngIf="item.createdDtm != null">ส่งแล้ว</div>
+                <div class="not-text" *ngIf="item.createdDtm == null">ไม่มีข้อมูล</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-list> -->
+
+    <ion-card *ngFor="let item of items" (click)="itemSelected(item)">
+      
+      <ion-item>
+        <h2>{{ item.positionName }}</h2>
+        <ion-row>
+            <ion-col class="date">
+                {{ item.pcreatedDtm }}
+            </ion-col>
+            <ion-col class="right">
+                {{ problemStatus[item.status] }}
+            </ion-col>
+        </ion-row>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-only small round full [disabled]="item.createdDtm == null" (click)="presentModal(item)">
+              <ion-icon name="eye"></ion-icon> เพิ่มเติม
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-only small round full color="secondary" [disabled]="item.createdDtm == null">
+              <ion-icon name="checkmark-circle"></ion-icon> สำเร็จ
+          </button>
+        </ion-col>
+        <ion-col>
+            <button ion-button icon-only small round full color="danger" [disabled]="item.createdDtm == null">
+                <ion-icon name="close-circle"></ion-icon> ไม่สำเร็จ
+            </button>
+          </ion-col>
+      </ion-row>
+    
+    </ion-card>
+
+</ion-content>

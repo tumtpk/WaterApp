@@ -1,0 +1,10 @@
+page-tabs {
+    .tabs-md .tab-button[aria-selected=true] {
+        background-color: #488aff;
+        color: white;
+    }
+
+    .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+        color: white;
+    }
+}

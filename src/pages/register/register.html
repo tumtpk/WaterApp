@@ -1,0 +1,94 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ลงทะเบียน</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="registerForm()">
+    <ion-list>
+
+      <ion-item>
+        <ion-label>ชื่อ-นามสกุล</ion-label>
+        <ion-input type="text" class="text-right" formControlName="name"></ion-input>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.name.hasError('required') && form.controls.name.dirty">กรอกชื่อ-นาสกุล</div> -->
+    
+      <ion-item>
+        <ion-label>เพศ</ion-label>
+        <ion-select formControlName="gender">
+          <ion-option value="1">หญิง</ion-option>
+          <ion-option value="2">ชาย</ion-option>
+        </ion-select>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.gender.hasError('required') && form.controls.gender.dirty">เลือกเพศ</div> -->
+
+      <ion-item>
+        <ion-label>วัน/เดือน/ปีเกิด</ion-label>
+        <ion-input type="text" formControlName="dob" placeholder="dd/mm/yyyy"></ion-input>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.dob.hasError('required') && form.controls.dob.dirty">เลือกวัน/เดือน/ปีเกิด</div> -->
+      <ion-item>
+        <ion-label>เบอร์โทรศัพท์</ion-label>
+        <ion-input type="number" formControlName="phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>หมู่ที่</ion-label>
+        <ion-input type="number" class="text-right" formControlName="village"></ion-input>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.village.hasError('required') && form.controls.village.dirty">กรอกหมู่ที่</div> -->
+
+      <ion-item>
+        <ion-label>จังหวัด</ion-label>
+        <ion-select #province formControlName="province" (ionChange)="setProvince(province.value)">
+            <ion-option *ngFor="let item of provinceData" value="{{item.province_id}}">{{item.province_name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.province.hasError('required') && form.controls.province.dirty">เลือกจังหวัด</div> -->
+
+      <ion-item>
+        <ion-label>อำเภอ</ion-label>
+        <ion-select #district formControlName="district" (ionChange)="setDistrict(district.value)">
+            <ion-option *ngFor="let item of districtOption" value="{{item.amphur_id}}">{{item.amphur_name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.district.hasError('required') && form.controls.district.dirty">เลือกอำเภอ</div> -->
+
+      <ion-item>
+        <ion-label>ตำบล</ion-label>
+        <ion-select #subdistrict formControlName="subdistrict">
+            <ion-option *ngFor="let item of subdistrictOption" value="{{item.district_id}}">{{item.district_name}}</ion-option>
+        </ion-select>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.subdistrict.hasError('required') && form.controls.subdistrict.dirty">เลือกตำบล</div> -->
+
+      <ion-item>
+        <ion-label>อีเมล์</ion-label>
+        <ion-input formControlName="email" type="email" class="text-right"></ion-input>
+      </ion-item>
+      <!-- <div class="error" *ngIf="(form.controls.email.hasError('required') || form.controls.email.hasError('email')) && form.controls.email.dirty">กรอกอีเมล์</div> -->
+
+      <ion-item>
+        <ion-label>รหัสผ่าน</ion-label>
+        <ion-input formControlName="password" [type]="passwordType" clearOnEdit="false"></ion-input>
+        <ion-icon item-end [name]="passwordIcon" class="passwordIcon" (click)='hideShowPassword()'></ion-icon>
+      </ion-item>
+      <!-- <div class="error" *ngIf="form.controls.password.hasError('required') && form.controls.password.dirty">กรอกรหัสผ่าน</div> -->
+
+      <div class="bg-white" padding>
+        <button type="submit" [disabled]="!form.valid" ion-button color="primary" block>ลงทะเบียน</button>
+      </div>
+    
+    </ion-list>
+  </form>
+</ion-content>

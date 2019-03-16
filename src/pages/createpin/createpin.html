@@ -1,0 +1,69 @@
+<!--
+  Generated template for the CreatepinPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>เพิ่มพิกัด</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <ion-list>
+            <ion-list-header>
+                ข้อมูลน้ำ  {{pin.pinName + " ("+ pin.latitude+ ","+ pin.longitude+")"}}
+            </ion-list-header>
+            <ion-item>
+                <ion-label stacked>ออกซิเจนละลายน้ำ (DO)</ion-label>
+                <ion-input type="text" formControlName="val1"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>ความสกปรกในรูปสารอินทรีย์ (BOD)</ion-label>
+                <ion-input type="text" formControlName="val2"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>แอมโมเนีย (NH<sub>3</sub>)</ion-label>
+                <ion-input type="text" formControlName="val3"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>แบคทีเรียกลุ่มฟีคัลโคลิฟอร์ม (FCB)</ion-label>
+                <ion-input type="text" formControlName="val4"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>แบคทีเรียกลุ่มฟีคัลโคลิฟอร์มทั้งหมด (TCB)</ion-label>
+                <ion-input type="text" formControlName="val5"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>ปริมาณของแข็งที่ละลายได้ในน้ำ (TSS)</ion-label>
+                <ion-input type="text" formControlName="val7"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>ความเป็นกรด-เบส (pH)</ion-label>
+                <ion-input type="text" formControlName="val6"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked>ความเค็ม (Sal)</ion-label>
+                <ion-input type="text" formControlName="val8"></ion-input>
+            </ion-item>
+            <ion-list-header>
+                    ปัญหา
+            </ion-list-header>
+            <ion-item>
+                <ion-label stacked>สาเหตุที่ไม่สามาถส่งค่าของน้ำได้</ion-label>
+                <ion-textarea rows="3" formControlName="description"></ion-textarea>
+            </ion-item>
+        </ion-list>
+
+        <button ion-button full icon-start type="submit">
+            <ion-icon name="checkmark-circle"></ion-icon>
+            ส่งข้อมูล
+        </button>
+  
+    </form>
+</ion-content>

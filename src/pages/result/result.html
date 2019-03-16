@@ -1,0 +1,120 @@
+<!--
+  Generated template for the ResultPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<!-- <ion-header>
+    <ion-navbar>
+        <ion-title>Page1</ion-title>
+      <button ion-button round outline float-right>
+          <ion-icon name="star"></ion-icon> เข้าสู่ระบบ
+      </button>
+    </ion-navbar>
+</ion-header> -->
+
+<!-- <ion-header>
+
+  <ion-navbar color="sky">
+    <ion-title>
+      <img src="./assets/img/avatar.png" />
+      หมอน้ำ
+    </ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+  
+<ion-content padding>    
+        <div class="shadow">  
+            <ion-item>
+                <ion-label>สถานที่</ion-label>
+                <ion-select [(ngModel)]="pinId" (ngModelChange)="getWqi()">
+                  <ion-option *ngFor="let item of wqiAllPin" value="{{item.pinId}}" [selected]="item.pinId == pinId">{{item.pinName}}</ion-option>
+                </ion-select>
+              </ion-item>          
+              <div>
+                  <div class="progress-percentage-wrapper">
+                      <div class="progress-percentage-header-logo ng-cloak">
+                          <img src="./assets/img/avatar.png" class="img" />
+                      </div>
+                      <div class="progress-percentage-header ng-cloak">WQI</div>
+                      <div class="progress-percentage ng-cloak">{{current}}<small>/100</small></div>
+
+                    <round-progress [current]="current" [max]="max" [stroke]="stroke" [radius]="radius" [semicircle]="semicircle" [rounded]="rounded"
+                    [responsive]="responsive" [clockwise]="clockwise" [color]="gradient ? 'url(#gradient)' : color" [background]="background"
+                    [duration]="duration" [animation]="animation" [animationDelay]="animationDelay"></round-progress>
+                
+                    <div class="progress-percentage-button ng-cloak">
+                        <button ion-button outline small (click)="presentModal()">รายละเอียด</button>
+                    </div>
+                  </div>
+              </div>
+              <br>
+              <ion-grid>
+                <ion-row>
+                  <ion-col class="border">
+                    <ion-row>
+                      <ion-col>DO</ion-col>
+                      <ion-col class="tag {{do.class}}">{{ do.val }}</ion-col>
+                    </ion-row>
+                  </ion-col>
+                  <ion-col class="border">
+                    <ion-row>
+                      <ion-col>pH</ion-col>
+                      <ion-col class="tag {{ph.class}}">{{ ph.val }}</ion-col>
+                    </ion-row>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-grid>
+                <ion-row>
+                    <ion-col class="border">
+                      <ion-row>
+                        <ion-col>NH<sub>3</sub></ion-col>
+                        <ion-col class="tag {{nh3.class}}">{{ nh3.val }}</ion-col>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col class="border">
+                      <ion-row>
+                        <ion-col>Sal</ion-col>
+                        <ion-col class="tag {{sal.class}}">{{ sal.val }}</ion-col>
+                      </ion-row>
+                    </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-grid>
+                <ion-row>
+                    <ion-col class="border">
+                      <ion-row>
+                        <ion-col>FCB</ion-col>
+                        <ion-col class="tag {{fcb.class}}">{{ fcb.val }}</ion-col>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col class="border">
+                      <ion-row>
+                        <ion-col>TSS</ion-col>
+                        <ion-col class="tag {{tss.class}}">{{ tss.val }}</ion-col>
+                      </ion-row>
+                    </ion-col>
+                </ion-row>
+              </ion-grid>
+              <ion-grid>
+                <ion-row>
+                    <ion-col class="border">
+                      <ion-row>
+                        <ion-col>BOD</ion-col>
+                        <ion-col class="tag {{bod.class}}">{{ bod.val }}</ion-col>
+                      </ion-row>
+                    </ion-col>
+                    <ion-col class="border">
+                    </ion-col>
+                </ion-row>
+              </ion-grid>
+        </div>
+
+</ion-content>
+
+<ion-footer>
+    <img src="./assets/img/result2.png" />
+</ion-footer>

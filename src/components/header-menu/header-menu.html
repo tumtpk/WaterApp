@@ -1,0 +1,46 @@
+<ion-content color="primary" persistent="true">
+    <ion-list class="user-list">
+        <button ion-item menuClose class="text-1x" (click)="gotoPin()">
+            <ion-icon item-left name="swap" color="primary"></ion-icon>
+            <span ion-text> ส่งข้อมูลน้ำ</span>
+        </button>
+        <button ion-item menuClose class="text-1x" (click)="gotoProblem()">
+            <ion-icon item-left name="construct" color="primary"></ion-icon>
+            <span ion-text> แจ้งปัญหา</span>
+        </button>
+        <button ion-item menuClose class="text-1x" (click)="gotoQuality()">
+            <ion-icon item-left name="checkmark-circle-outline" color="primary"></ion-icon>
+            <span ion-text> ผลการแจ้งปัญหา</span>
+        </button>
+        <button ion-item menuClose class="text-1x" (click)="gotoSetting()">
+            <ion-icon item-left name="cog" color="primary"></ion-icon>
+            <span ion-text> ตั้งค่าแจ้งเตือน</span>
+        </button>
+        <!-- <button ion-item menuClose class="text-1x">
+            <ion-icon item-left name="swap" color="primary"></ion-icon>
+            <span ion-text color="primary"> ส่งข้อมูลน้ำ</span>
+        </button>
+        <button ion-item menuClose class="text-1x">
+            <ion-icon item-left name="swap" color="primary"></ion-icon>
+            <span ion-text color="primary"> ส่งข้อมูลน้ำ</span>
+        </button>
+        <button ion-item menuClose class="text-1x">
+            <ion-icon item-left name="swap" color="primary"></ion-icon>
+            <span ion-text color="primary"> ส่งข้อมูลน้ำ</span>
+        </button>
+        <button ion-item menuClose class="text-1x">
+            <ion-icon item-left name="swap" color="primary"></ion-icon>
+            <span ion-text color="primary"> ส่งข้อมูลน้ำ</span>
+        </button> -->
+        <!-- <ion-item><ion-icon name="swap" class="green"></ion-icon> ส่งข้อมูลน้ำ</ion-item>
+        <ion-item><ion-icon name="alert" class="orange"></ion-icon> แจ้งปัญหา</ion-item>
+        <ion-item><ion-icon name="analytics" class="purple"></ion-icon> คุณภาพน้ำ</ion-item>
+        <ion-item><ion-icon name="clipboard" class="black"></ion-icon> ผลวินิจฉัย</ion-item>
+        <ion-item><ion-icon name="pin" class="red"></ion-icon> บันทึกพิกัด</ion-item>
+        <ion-item><ion-icon name="cog" class="gray"></ion-icon> ตั้งค่า</ion-item> -->
+        <button ion-item menuClose class="text-1x" (click)="logoutClicked()">
+            <ion-icon item-left name="log-out" color="primary"></ion-icon>
+            <span ion-text> ออกจากระบบ</span>
+        </button>
+      </ion-list>
+</ion-content>

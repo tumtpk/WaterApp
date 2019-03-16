@@ -1,0 +1,38 @@
+page-pin {
+    .toolbar-md-primary .toolbar-background-md {
+        background: #488aff;
+    }
+    .bottom {
+        padding: $content-padding;
+        position: fixed;
+        bottom:0;
+        left: 0;
+        right: 0;
+    }
+    .border{
+        border-bottom: 1px solid #dedede;
+        font-size: 1.6rem;
+        padding-bottom: 5px;
+        margin: 5px;
+    }
+    .text{
+        text-align: right;
+        color: #4bd634;
+        font-style: italic;
+    }
+    .not-text {
+        text-align: right;
+        color: #9E9E9E;
+        font-style: italic;
+        font-size: 14px;
+    }
+    .toolbar-title-md {
+        color: #ffffff;
+    }
+    .toolbar-background-md {
+        background: #488aff;
+    }
+    .back-button.show-back-button {
+        color: white;
+    }
+}

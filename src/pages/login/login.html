@@ -1,0 +1,73 @@
+<ion-content class="login-content" padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+      <div padding-horizontal text-center class="animated fadeInDown">
+        <h2 ion-text class="text-primary">
+          <strong>หมอน้ำ</strong>
+        </h2>
+        <div class="logo"></div>
+      </div>
+
+      <!-- Login form -->
+    <form class="list-form" [formGroup]="form" (ngSubmit)="login()">
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+            อีเมล์
+          </ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+            รหัสผ่าน
+          </ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+      </form>
+  
+      <div>
+        <button ion-button icon-start block color="dark" tappable (click)="login()">
+          <ion-icon name="log-in"></ion-icon>
+          เข้าสู่ระบบ
+        </button>
+  
+      </div>
+
+  </div>
+  <!-- <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="http://placehold.it/300x200"/><br>
+      <h2>Application</h2>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+            </ion-item>
+            
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" formControlName="password"></ion-input>
+            </ion-item>
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit">เข้าสู่ระบบ</button>
+          <button type="button" ion-button class="register-btn" block clear (click)="createAccount()">ลงทะเบียน</button>
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div> -->
+</ion-content>

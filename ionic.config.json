@@ -1,0 +1,13 @@
+{
+  "name": "water",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/water",
+      "proxyUrl": "http://tumpk.com/water/"
+    }
+  ],
+  "type": "ionic-angular"
+}
